@@ -22,7 +22,6 @@ const oddEvenNumGame = () => {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       i += 1;
-      continue;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
