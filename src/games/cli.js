@@ -1,8 +1,10 @@
-import {welcome} from '../index.js';
+import { welcome } from '../index.js';
 
-export const greetingsUser = () => {
+const greetingsUser = () => {
   console.log('Welcome to the Brain Games!');
-  const userName =  welcome (); 
+  const userName = welcome();
   console.log(`Hello, ${userName}!`);
   return userName;
-};  
+};
+
+export default greetingsUser;
