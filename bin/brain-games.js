@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import greetingsUser from '../src/cli.js';
+import {greetingsUser as greetingsUser} from '../src/games/cli.js';
 
-greetingsUser();
+const username = greetingsUser();
