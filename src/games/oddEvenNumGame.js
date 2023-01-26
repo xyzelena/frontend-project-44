@@ -19,7 +19,7 @@ const oddEvenNumGame = () => {
     else return false;
   } while (i < 3);
   console.log(`Congratulations, ${userName}!`);
-return true;
+  return true;
 };
 
 export default oddEvenNumGame;
