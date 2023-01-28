@@ -3,44 +3,40 @@ import { playGame } from '../index.js';
 
 const userName = greetingsUser();
 
+console.log('What is the result of the expression?');
+
 const calcGame = () => {
-  console.log('What is the result of the expression?');
+  const num1 = Math.floor(Math.random() * 11);
+  const num2 = Math.floor(Math.random() * 11);
 
   const mathSymbols = ['+', '-', '*'];
+  const indexMathSymbol = Math.floor(Math.random() * 3);
 
-  let i = 0;
+  const question = `${num1} ${mathSymbols[indexMathSymbol]} ${num2}`;
 
-  do {
-    const num1 = Math.floor(Math.random() * 11);
-    const num2 = Math.floor(Math.random() * 11);
+  let trueAnswer = 0;
 
-    const indexMathSymbol = Math.floor(Math.random() * 3);
-    const question = `${num1} ${mathSymbols[indexMathSymbol]} ${num2}`;
+  switch (mathSymbols[indexMathSymbol]) {
+    case '+':
+      trueAnswer = num1 + num2;
+      break;
+    case '-':
+      trueAnswer = num1 - num2;
+      break;
+    case '*':
+      trueAnswer = num1 * num2;
+      break;
+    default:
+      console.log('Some problem with math symbols.');
+  }
 
-    let trueAnswer = 0;
+  trueAnswer = String(trueAnswer);
 
-    switch (mathSymbols[indexMathSymbol]) {
-      case '+':
-        trueAnswer = num1 + num2;
-        break;
-      case '-':
-        trueAnswer = num1 - num2;
-        break;
-      case '*':
-        trueAnswer = num1 * num2;
-        break;
-      default:
-        console.log('Some problem with math symbols.');
-    }
+  const arrQuestionAnswer = [question, trueAnswer];
 
-    const result = playGame(userName, question, String(trueAnswer));
-
-    if (result) i += 1;
-    else return false;
-  } while (i < 3);
-
-  console.log(`Congratulations, ${userName}!`);
-  return true;
+  return arrQuestionAnswer;
 };
+
+playGame(userName, calcGame);
 
 export default calcGame;
