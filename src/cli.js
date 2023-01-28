@@ -1,4 +1,4 @@
-import { welcome } from '../index.js';
+import { welcome } from './index.js';
 
 const greetingsUser = () => {
   console.log('Welcome to the Brain Games!');

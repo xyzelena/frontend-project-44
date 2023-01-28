@@ -1,4 +1,4 @@
-import greetingsUser from './cli.js';
+import greetingsUser from '../cli.js';
 import { playGame } from '../index.js';
 
 const userName = greetingsUser();
