@@ -7,3 +7,4 @@
 #### Asciinema with installing the package, starting the game, winning and losing a player.
 1. [Link](https://asciinema.org/a/553756) - brain-even game 
 2. [Link](https://asciinema.org/a/555195) - brain-calc game
+3. [Link](https://asciinema.org/a/555366) - brain-gcd game
