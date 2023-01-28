@@ -3,40 +3,51 @@ import { playGame } from '../index.js';
 
 const userName = greetingsUser();
 
-console.log('What is the result of the expression?');
+console.log('Find the greatest common divisor of given numbers.');
 
-const calcGame = () => {
-  const num1 = Math.floor(Math.random() * 11);
-  const num2 = Math.floor(Math.random() * 11);
+const getDividersNum = (num) => {
+  const result = []; 
 
-  const mathSymbols = ['+', '-', '*'];
-  const indexMathSymbol = Math.floor(Math.random() * 3);
+  if(num === 0 || num === 1){
+    result.push(num);
+    return result; 
+} 
 
-  const question = `${num1} ${mathSymbols[indexMathSymbol]} ${num2}`;
+  for(let i = 0; i <= num; i += 1){
+     if(num % i === 0) result.push(i);
+}
 
-  let trueAnswer = 0;
+return result;
+};
 
-  switch (mathSymbols[indexMathSymbol]) {
-    case '+':
-      trueAnswer = num1 + num2;
-      break;
-    case '-':
-      trueAnswer = num1 - num2;
-      break;
-    case '*':
-      trueAnswer = num1 * num2;
-      break;
-    default:
-      console.log('Some problem with math symbols.');
-  }
+const  getGcd = (arrayNum1, arrayNum2) => {
+   const commonArray = [];
 
-  trueAnswer = String(trueAnswer);
+   for (let i = 0; i < arrayNum1.length; i += 1){
+      if(arrayNum2.includes(arrayNum1[i])) commonArray.push(arrayNum1[i]);
+}
+
+const result = commonArray[commonArray.length-1];
+
+return result;
+};
+
+const gcdGame = () => {
+  const num1 = Math.floor(Math.random() * 21);
+  const num2 = Math.floor(Math.random() * 21);
+  
+  const question = `${num1} ${num2}`;
+  
+  const dividersArrayNum1 = getDividersNum(num1);
+  const dividersArrayNum2 = getDividersNum(num2);
+
+  const trueAnswer = String(getGcd(dividersArrayNum1, dividersArrayNum2));
 
   const arrQuestionAnswer = [question, trueAnswer];
 
   return arrQuestionAnswer;
 };
 
-playGame(userName, calcGame);
+playGame(userName, gcdGame);
 
-export default calcGame;
+export default gcdGame;
