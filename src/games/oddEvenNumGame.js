@@ -1,8 +1,6 @@
 import greetingsUser from './cli.js';
 import { playGame } from '../index.js';
 
-import {cons} from '@hexlet/pairs';
-
 const userName = greetingsUser();
 
 const yes = 'yes';
@@ -14,11 +12,11 @@ const oddEvenNumGame = () => {
   const question = Math.floor(Math.random() * 101);
   const trueAnswer = (question % 2 === 0) ? yes : no;
 
-  const pair = cons(question,trueAnswer); 
+  const arrQuestionAnswer = [question,trueAnswer]; 
   
-  return pair;
+  return arrQuestionAnswer;
 };
 
-playGame(userName, oddEvenNumGame());
+playGame(userName, oddEvenNumGame);
 
 export default oddEvenNumGame;
