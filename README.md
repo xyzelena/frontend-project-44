@@ -4,7 +4,6 @@
 
 
 # Examples of games
-## asciinema with installing the package, starting the game, winning and losing a player
-
+#### asciinema with installing the package, starting the game, winning and losing a player
 1. [Link](https://asciinema.org/a/553756) - brain-even 
 2. [Link](https://asciinema.org/a/555195) - brain-calc
