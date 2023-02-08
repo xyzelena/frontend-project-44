@@ -1,4 +1,6 @@
 import { playGame } from '../index.js';
+import { getRandomNum } from '../utils.js';
+
 
 const yes = 'yes';
 const no = 'no';
@@ -17,13 +19,11 @@ const getAnswer = (question) => {
 
 const primeNumGame = () => {
   const maxNum = 25;
-  const question = Math.floor(Math.random() * maxNum);
+  const question = getRandomNum(maxNum);
 
   const trueAnswer = getAnswer(question);
 
-  const arrQuestionAnswer = [question, trueAnswer];
-
-  return arrQuestionAnswer;
+  return [question, trueAnswer];
 };
 
 playGame(task, primeNumGame);
