@@ -1,8 +1,8 @@
-import { welcome } from './index.js';
+import readlineSync from 'readline-sync';
 
 const greetingsUser = () => {
   console.log('Welcome to the Brain Games!');
-  const userName = welcome();
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   return userName;
 };
