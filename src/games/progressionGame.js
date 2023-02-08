@@ -1,21 +1,20 @@
+import { getRandomMinMaxNum } from '../utils.js';
 import { playGame } from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
-const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
-
-const getSkipValue = (arrProgression) => {
-  const arr = arrProgression.slice(0);
-  const skipIndexValue = getRandom(0, arr.length - 1);
-  const trueAnswer = arr[skipIndexValue];
-  arr[skipIndexValue] = '..';
-  return [arr, trueAnswer];
+const getSkipValue = (progression) => {
+  const pr = progression.slice(0);
+  const skipIndexValue = getRandomMinMaxNum(0, pr.length - 1);
+  const trueAnswer = pr[skipIndexValue];
+  pr[skipIndexValue] = '..';
+  return [pr, trueAnswer];
 };
 
 const progressionGame = () => {
-  const firstNum = getRandom(0, 5);
-  const step = getRandom(2, 5);
-  const lengthProgression = getRandom(5, 10);
+  const firstNum = getRandomMinMaxNum(0, 5);
+  const step = getRandomMinMaxNum(2, 5);
+  const lengthProgression = getRandomMinMaxNum(5, 10);
 
   const progression = [firstNum];
 
@@ -29,9 +28,7 @@ const progressionGame = () => {
 
   const trueAnswer = String(skip[1]);
 
-  const arrQuestionAnswer = [question, trueAnswer];
-
-  return arrQuestionAnswer;
+  return [question, trueAnswer];
 };
 
 playGame(task, progressionGame);

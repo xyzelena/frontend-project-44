@@ -1,6 +1,5 @@
-import { playGame } from '../index.js';
 import { getRandomNum } from '../utils.js';
-
+import { playGame } from '../index.js';
 
 const yes = 'yes';
 const no = 'no';

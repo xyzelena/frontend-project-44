@@ -1,3 +1,4 @@
+import { getRandomNum } from '../utils.js';
 import { playGame } from '../index.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
@@ -17,32 +18,31 @@ const getDividersNum = (num) => {
   return result;
 };
 
-const getGcd = (arrayNum1, arrayNum2) => {
-  const commonArray = [];
+const getGcd = (numbers_1, numbers_2) => {
+  const commonNumbers = [];
 
-  for (let i = 0; i < arrayNum1.length; i += 1) {
-    if (arrayNum2.includes(arrayNum1[i])) commonArray.push(arrayNum1[i]);
+  for (let i = 0; i < numbers_1.length; i += 1) {
+    if (numbers_2.includes(numbers_1[i])) commonNumbers.push(numbers_1[i]);
   }
 
-  const result = commonArray[commonArray.length - 1];
+  const result = commonNumbers[commonNumbers.length - 1];
 
   return result;
 };
 
 const gcdGame = () => {
-  const num1 = Math.floor(Math.random() * 21 + 1);
-  const num2 = Math.floor(Math.random() * 21 + 1);
+  const maxNum = 21; 
+  const num1 = getRandomNum(maxNum) + 1;
+  const num2 = getRandomNum(maxNum) + 1;
 
   const question = `${num1} ${num2}`;
 
-  const dividersArrayNum1 = getDividersNum(num1);
-  const dividersArrayNum2 = getDividersNum(num2);
+  const dividersNum_1 = getDividersNum(num1);
+  const dividersNum_2 = getDividersNum(num2);
 
-  const trueAnswer = String(getGcd(dividersArrayNum1, dividersArrayNum2));
+  const trueAnswer = String(getGcd(dividersNum_1, dividersNum_2));
 
-  const arrQuestionAnswer = [question, trueAnswer];
-
-  return arrQuestionAnswer;
+  return [question, trueAnswer];
 };
 
 playGame(task, gcdGame);

@@ -1,13 +1,15 @@
+import { getRandomNum } from '../utils.js';
 import { playGame } from '../index.js';
 
 const task = 'What is the result of the expression?';
 
 const calcGame = () => {
-  const num1 = Math.floor(Math.random() * 11);
-  const num2 = Math.floor(Math.random() * 11);
+  const maxNum = 11; 
+  const num1 = getRandomNum(maxNum);
+  const num2 = getRandomNum(maxNum);
 
   const mathSymbols = ['+', '-', '*'];
-  const indexMathSymbol = Math.floor(Math.random() * 3);
+  const indexMathSymbol = getRandomNum(mathSymbols.length);
 
   const question = `${num1} ${mathSymbols[indexMathSymbol]} ${num2}`;
 
@@ -29,9 +31,7 @@ const calcGame = () => {
 
   trueAnswer = String(trueAnswer);
 
-  const arrQuestionAnswer = [question, trueAnswer];
-
-  return arrQuestionAnswer;
+  return [question, trueAnswer];
 };
 
 playGame(task, calcGame);
