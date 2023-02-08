@@ -1,12 +1,8 @@
-import greetingsUser from '../cli.js';
 import { playGame } from '../index.js';
-
-const userName = greetingsUser();
 
 const yes = 'yes';
 const no = 'no';
-
-console.log(`Answer "${yes}" if given number is prime. Otherwise answer "${no}".`);
+const task = `Answer "${yes}" if given number is prime. Otherwise answer "${no}".`;
 
 const getAnswer = (question) => {
   if (question <= 1) return no;
@@ -30,6 +26,6 @@ const primeNumGame = () => {
   return arrQuestionAnswer;
 };
 
-playGame(userName, primeNumGame);
+playGame(task, primeNumGame);
 
 export default primeNumGame;

@@ -1,9 +1,6 @@
-import greetingsUser from '../cli.js';
 import { playGame } from '../index.js';
 
-const userName = greetingsUser();
-
-console.log('What number is missing in the progression?');
+const task = 'What number is missing in the progression?';
 
 const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
@@ -37,6 +34,6 @@ const progressionGame = () => {
   return arrQuestionAnswer;
 };
 
-playGame(userName, progressionGame);
+playGame(task, progressionGame);
 
 export default progressionGame;

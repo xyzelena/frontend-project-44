@@ -1,9 +1,6 @@
-import greetingsUser from '../cli.js';
 import { playGame } from '../index.js';
 
-const userName = greetingsUser();
-
-console.log('What is the result of the expression?');
+const task = 'What is the result of the expression?';
 
 const calcGame = () => {
   const num1 = Math.floor(Math.random() * 11);
@@ -37,6 +34,6 @@ const calcGame = () => {
   return arrQuestionAnswer;
 };
 
-playGame(userName, calcGame);
+playGame(task, calcGame);
 
 export default calcGame;

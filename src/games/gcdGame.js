@@ -1,9 +1,6 @@
-import greetingsUser from '../cli.js';
 import { playGame } from '../index.js';
 
-const userName = greetingsUser();
-
-console.log('Find the greatest common divisor of given numbers.');
+const task = 'Find the greatest common divisor of given numbers.';
 
 const getDividersNum = (num) => {
   const result = [];
@@ -33,8 +30,8 @@ const getGcd = (arrayNum1, arrayNum2) => {
 };
 
 const gcdGame = () => {
-  const num1 = Math.floor(Math.random() * 21);
-  const num2 = Math.floor(Math.random() * 21);
+  const num1 = Math.floor(Math.random() * 21 + 1);
+  const num2 = Math.floor(Math.random() * 21 + 1);
 
   const question = `${num1} ${num2}`;
 
@@ -48,6 +45,6 @@ const gcdGame = () => {
   return arrQuestionAnswer;
 };
 
-playGame(userName, gcdGame);
+playGame(task, gcdGame);
 
 export default gcdGame;
