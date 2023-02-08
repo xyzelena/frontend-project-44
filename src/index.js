@@ -13,6 +13,7 @@ export const playGame = (task, questionAnswer) => {
   console.log(task); 
 
   let i = 0;
+  const ROUNDS_COUNT = 3; 
 
   do {
     const [question, trueAnswer] = questionAnswer();
@@ -26,8 +27,7 @@ export const playGame = (task, questionAnswer) => {
       console.log(`Let's try again, ${userName}!`);
       return false;
     }
-  } while (i < 3);
+  } while (i < ROUNDS_COUNT);
 
   console.log(`Congratulations, ${userName}!`);
-  return true;
 };
