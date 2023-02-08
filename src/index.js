@@ -6,7 +6,7 @@ const getAnswer = (question) => {
   return userAnswer;
 };
 
-export const playGame = (task, arrQuestionAnswer) => {
+export const playGame = (task, questionAnswer) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -15,7 +15,7 @@ export const playGame = (task, arrQuestionAnswer) => {
   let i = 0;
 
   do {
-    const [question, trueAnswer] = arrQuestionAnswer();
+    const [question, trueAnswer] = questionAnswer();
     const userAnswer = getAnswer(question);
 
     if (userAnswer === trueAnswer) {
