@@ -13,14 +13,6 @@ const getProgression = (firstNum, step, lengthProgression) => {
   return progression;
 };
 
-const getSkipValue = (progression) => {
-  const pr = progression.slice(0);
-  const skipIndexValue = getRandomMinMaxNum(0, pr.length - 1);
-  const trueAnswer = pr[skipIndexValue];
-  pr[skipIndexValue] = '..';
-  return [pr, trueAnswer];
-};
-
 const progressionGame = () => {
   const firstNum = getRandomMinMaxNum(0, 5);
   const step = getRandomMinMaxNum(2, 5);
@@ -28,11 +20,11 @@ const progressionGame = () => {
 
   const progression = getProgression(firstNum, step, lengthProgression);
 
-  const skip = getSkipValue(progression);
+  const skipIndexValue = getRandomMinMaxNum(0, lengthProgression - 1);
+  const trueAnswer = String(progression[skipIndexValue]);
+  progression[skipIndexValue] = '..';
 
-  const question = skip[0].join(' ');
-
-  const trueAnswer = String(skip[1]);
+  const question = progression.join(' ');
 
   return [question, trueAnswer];
 };
