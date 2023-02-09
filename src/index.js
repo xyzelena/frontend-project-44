@@ -6,7 +6,7 @@ const getAnswer = (question) => {
   return userAnswer;
 };
 
-export const playGame = (task, questionAnswer) => {
+const playGame = (task, questionAnswer) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -30,4 +30,8 @@ export const playGame = (task, questionAnswer) => {
   } while (i < ROUNDS_COUNT);
 
   console.log(`Congratulations, ${userName}!`);
+
+  return true;
 };
+
+export default playGame;

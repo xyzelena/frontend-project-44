@@ -1,5 +1,5 @@
 import { getRandomMinMaxNum } from '../utils.js';
-import { playGame } from '../index.js';
+import playGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
