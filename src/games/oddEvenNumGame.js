@@ -1,14 +1,15 @@
 import { getRandomNum } from '../utils.js';
 import playGame from '../index.js';
 
-const yes = 'yes';
-const no = 'no';
-const task = `Answer "${yes}" if the number is even, otherwise answer "${no}".`;
+const task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
+const isEven = (num) => (num % 2 === 0) ? true : false;
 
 const oddEvenNumGame = () => {
   const maxNum = 101;
   const question = getRandomNum(maxNum);
-  const trueAnswer = (question % 2 === 0) ? yes : no;
+  
+  const trueAnswer = isEven(question) === true ? 'yes' : 'no';
 
   return [question, trueAnswer];
 };
