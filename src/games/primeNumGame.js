@@ -1,26 +1,24 @@
 import { getRandomNum } from '../utils.js';
 import playGame from '../index.js';
 
-const yes = 'yes';
-const no = 'no';
-const task = `Answer "${yes}" if given number is prime. Otherwise answer "${no}".`;
+const task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-const getAnswer = (question) => {
-  if (question <= 1) return no;
-  if (question === 2) return yes;
+const getAnswer = (num) => {
+  if (num <= 1) return false;
+  if (num === 2) return true;
 
-  for (let i = 2; i < question; i += 1) {
-    if (question % i === 0) return no;
+  for (let i = 2; i < num; i += 1) {
+    if (num % i === 0) return false;
   }
 
-  return yes;
+  return true;
 };
 
 const primeNumGame = () => {
   const maxNum = 25;
   const question = getRandomNum(maxNum);
 
-  const trueAnswer = getAnswer(question);
+  const trueAnswer = getAnswer(question) === true ? 'yes':'no';
 
   return [question, trueAnswer];
 };
