@@ -3,7 +3,7 @@ import { playGame } from '../index.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
 
-const gcd = ( a,  b) => a === 0 ? b:gcd(b % a, a); 
+const gcd = (a, b) => (a === 0 ? b : gcd(b % a, a));
 
 const gcdGame = () => {
   const maxNum = 21;

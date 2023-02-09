@@ -4,16 +4,23 @@ import { playGame } from '../index.js';
 const task = 'What is the result of the expression?';
 
 const doCalc = (num1, num2, mathSymbol) => {
+  let result = 0;
+
   switch (mathSymbol) {
     case '+':
-      return (num1 + num2);
+      result = num1 + num2;
+      break;
     case '-':
-      return (num1 - num2);
+      result = num1 - num2;
+      break;
     case '*':
-      return (num1 * num2);
+      result = num1 * num2;
+      break;
     default:
       console.log('Some problem with math symbols.');
   }
+
+  return result;
 };
 
 const calcGame = () => {
