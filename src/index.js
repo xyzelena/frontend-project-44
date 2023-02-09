@@ -10,10 +10,10 @@ export const playGame = (task, questionAnswer) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(task); 
+  console.log(task);
 
   let i = 0;
-  const ROUNDS_COUNT = 3; 
+  const ROUNDS_COUNT = 3;
 
   do {
     const [question, trueAnswer] = questionAnswer();

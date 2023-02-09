@@ -3,7 +3,7 @@ import { playGame } from '../index.js';
 
 const task = 'What is the result of the expression?';
 
-const  doCalc = (num1, num2, mathSymbol) => {
+const doCalc = (num1, num2, mathSymbol) => {
   switch (mathSymbol) {
     case '+':
       return (num1 + num2);
@@ -11,11 +11,13 @@ const  doCalc = (num1, num2, mathSymbol) => {
       return (num1 - num2);
     case '*':
       return (num1 * num2);
+    default:
+      console.log('Some problem with math symbols.');
   }
 };
 
 const calcGame = () => {
-  const maxNum = 11; 
+  const maxNum = 11;
   const num1 = getRandomNum(maxNum);
   const num2 = getRandomNum(maxNum);
 
@@ -24,7 +26,7 @@ const calcGame = () => {
 
   const question = `${num1} ${mathSymbols[indexMathSymbol]} ${num2}`;
 
-  const trueAnswer = String(doCalc(num1,num2,mathSymbols[indexMathSymbol]));
+  const trueAnswer = String(doCalc(num1, num2, mathSymbols[indexMathSymbol]));
 
   return [question, trueAnswer];
 };

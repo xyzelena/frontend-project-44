@@ -8,6 +8,3 @@ const greetingsUser = () => {
 };
 
 export default greetingsUser;
-
-
-
