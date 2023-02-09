@@ -18,7 +18,7 @@ const primeNumGame = () => {
   const maxNum = 25;
   const question = getRandomNum(maxNum);
 
-  const trueAnswer = getAnswer(question) === true ? 'yes':'no';
+  const trueAnswer = getAnswer(question) === true ? 'yes' : 'no';
 
   return [question, trueAnswer];
 };

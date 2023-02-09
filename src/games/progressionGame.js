@@ -10,7 +10,7 @@ const getProgression = (firstNum, step, lengthProgression) => {
     progression[i] = progression[i - 1] + step;
   }
 
-  return progression; 
+  return progression;
 };
 
 const getSkipValue = (progression) => {
@@ -26,7 +26,7 @@ const progressionGame = () => {
   const step = getRandomMinMaxNum(2, 5);
   const lengthProgression = getRandomMinMaxNum(5, 10);
 
-  const progression = getProgression(firstNum, step, lengthProgression); 
+  const progression = getProgression(firstNum, step, lengthProgression);
 
   const skip = getSkipValue(progression);
 
