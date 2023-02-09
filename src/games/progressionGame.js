@@ -3,6 +3,16 @@ import playGame from '../index.js';
 
 const task = 'What number is missing in the progression?';
 
+const getProgression = (firstNum, step, lengthProgression) => {
+  const progression = [firstNum];
+
+  for (let i = 1; i < lengthProgression; i += 1) {
+    progression[i] = progression[i - 1] + step;
+  }
+
+  return progression; 
+};
+
 const getSkipValue = (progression) => {
   const pr = progression.slice(0);
   const skipIndexValue = getRandomMinMaxNum(0, pr.length - 1);
@@ -16,11 +26,7 @@ const progressionGame = () => {
   const step = getRandomMinMaxNum(2, 5);
   const lengthProgression = getRandomMinMaxNum(5, 10);
 
-  const progression = [firstNum];
-
-  for (let i = 1; i < lengthProgression; i += 1) {
-    progression[i] = progression[i - 1] + step;
-  }
+  const progression = getProgression(firstNum, step, lengthProgression); 
 
   const skip = getSkipValue(progression);
 
