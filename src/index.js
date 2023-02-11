@@ -26,13 +26,11 @@ const playGame = (task, questionAnswer) => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${trueAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      return false;
+      break;
     }
   } while (i < ROUNDS_COUNT);
 
   console.log(`Congratulations, ${userName}!`);
-
-  return true;
 };
 
 export default playGame;
