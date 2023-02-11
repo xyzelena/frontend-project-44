@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const ROUNDS_COUNT = 3;
+
 const getAnswer = (question) => {
   console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
@@ -13,7 +15,6 @@ const playGame = (task, questionAnswer) => {
   console.log(task);
 
   let i = 0;
-  const ROUNDS_COUNT = 3;
 
   do {
     const [question, trueAnswer] = questionAnswer();
