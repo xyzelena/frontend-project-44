@@ -30,7 +30,7 @@ const playGame = (task, questionAnswer) => {
     }
   } while (i < ROUNDS_COUNT);
 
-  console.log(`Congratulations, ${userName}!`);
+  if (i === 3) console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
